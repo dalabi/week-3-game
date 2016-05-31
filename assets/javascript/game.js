@@ -6,7 +6,7 @@ var wins = 0;
 var losses = 0;
 var guessesLeft = 10;
 var computerGuess;
-var lastChange = document.createElement('p');  
+var lastChange = [];  
 
 
 document.querySelector('#game').innerHTML = '<p>Please press a letter key to begin</p>';
@@ -22,6 +22,9 @@ var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 var computerGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
 	
 //
+userGuess = ' ' + userGuess;
+lastChange.push(userGuess);
+
 if (userGuess === computerGuess) {
 	
 	var guessedLetters
@@ -44,11 +47,8 @@ if (userGuess === computerGuess) {
 	    '<p>Wins: ' + wins + '</p>' +
 	    '<p>Losses: ' + losses + '</p>' +
 	    '<p>Guesses Left: ' + guessesLeft + '</p>' +
-	    '<p>Previous Guess: ' + userGuess + '</p>';
+		'Previous Guess: ' + lastChange;
 	  
 		
-   //     document.querySelector('#userGuesses') lastChange.innerHTML =
-        
-	  // '<p> Your Guesses so far: ' + userGuess.appendChild(lastChange) + '</p>';
-	  //document.querySelector('#userGuess').innerHTML =
+  
 };
